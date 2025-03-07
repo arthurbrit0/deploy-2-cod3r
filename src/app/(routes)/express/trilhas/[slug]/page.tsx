@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import { getExpressDevTrackById } from "@/services/formacaoExpressServices";
 import TracksPage from "@/features/courses/pages/CoursesPage";
+import { fromSeconds } from "@/utils/duration";
 
 export default async function SingleTrackPage({ params }) {
-  // Use "slug" since that's the route parameter name
   const { slug } = params;
   const track = await getExpressDevTrackById(slug);
   if (!track) notFound();
@@ -11,8 +11,8 @@ export default async function SingleTrackPage({ params }) {
   const title = track.nome;
   const description = track.descricao ?? "";
   const image = track.imagemURL ?? "";
-  const duration = Math.floor(track.duracao / 3600);
-  const level = "Iniciante"; // Adjust if necessary
+  const duration = fromSeconds(track.duracao);
+  const level = "Iniciante"; 
   const lessonsCount = track.qtdeDeAulas;
 
   const curriculum = track.cursos.map((c) => ({
@@ -44,5 +44,12 @@ export default async function SingleTrackPage({ params }) {
     curriculum,
   };
 
-  return <TracksPage courseData={courseData} />;
+  const trackStats = {
+    trackName: track.nome,
+    qtdeDeCursos: track.cursos.length,
+    qtdeDeAulas: track.qtdeDeAulas,
+    duracao: fromSeconds(track.duracao),
+  };
+
+  return <TracksPage courseData={courseData} trackStats={trackStats} />;
 }

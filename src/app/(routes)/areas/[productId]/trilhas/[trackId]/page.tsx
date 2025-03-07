@@ -13,7 +13,7 @@ export default async function SingleTrackPage({ params }) {
     trackName: track.nome,
     qtdeDeCursos: track.qtdeDeCursos,
     qtdeDeAulas: track.qtdeDeAulas,
-    duracao: track.duracao,
+    duracao: fromSeconds(track.duracao),
   };
 
   const courseData = {

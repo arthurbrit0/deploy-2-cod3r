@@ -9,12 +9,12 @@ interface CourseStatsProps {
   productStats: {
     qtdeDeCursos: number;
     qtdeDeAulas: number;
-    duracao: number; // em segundos
+    duracao: string;
   };
 }
 
 export default function CourseStats({ productStats }: CourseStatsProps) {
-  const totalHoras = fromSeconds(productStats.duracao);
+  const totalHoras = fromSeconds(Number(productStats.duracao));
 
   const items = [
     {

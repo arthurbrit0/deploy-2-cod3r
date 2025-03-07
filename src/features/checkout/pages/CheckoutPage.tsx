@@ -1,5 +1,5 @@
 import React from 'react'
-import CheckoutForm from '@/features/checkout/components'
+// import CheckoutForm from '@/features/checkout/components'
 // import Products from '@/features/shared/components/products'
 import Container from '@/features/shared/layouts/Container'
 import Header from '@/features/shared/components/header/Header'

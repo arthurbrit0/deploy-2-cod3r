@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CircleCheck, Terminal, Braces, ChevronRight } from 'lucide-react';
+import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CircleCheck, Terminal } from 'lucide-react';
 import Section from '../../layouts/SectionWrapper';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { CardWithCursor } from '@/components/ui/card-with-cursor';
@@ -262,7 +262,7 @@ export default function Products() {
                       {activeProduct.features.map((feature, index) => (
                         <div key={index} className="flex items-center gap-2 text-emerald-300">
                           <CircleCheck className="w-4 h-4" />
-                          <span>"{feature}"{index < activeProduct.features.length - 1 ? "," : ""}</span>
+                          <span>{`"`}{feature}{`"`}{index < activeProduct.features.length - 1 ? "," : ""}</span>
                         </div>
                       ))}
                     </div>
@@ -307,7 +307,7 @@ export default function Products() {
                 </div>
                 <div className="bg-gray-950 p-4 font-mono text-sm h-[calc(100%-2.5rem)] overflow-y-auto">
                   <div className="text-emerald-400">
-                    > Iniciando {activeProduct.title}...
+                    {`>`} Iniciando {activeProduct.title}...
                   </div>
                   <div className="mt-4">
                     <a

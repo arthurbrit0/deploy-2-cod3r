@@ -48,7 +48,7 @@ interface PageProps {
     trackName: string;
     qtdeDeCursos: number;
     qtdeDeAulas: number;
-    duracao: number; 
+    duracao: string; 
   };
 }
 

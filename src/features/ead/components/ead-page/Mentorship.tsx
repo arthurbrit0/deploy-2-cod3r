@@ -44,6 +44,7 @@ export default function EverythingYouNeed() {
     if (containerRef.current) {
       setContainerHeight(containerRef.current.offsetHeight);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerRef, features]);
 
   return (

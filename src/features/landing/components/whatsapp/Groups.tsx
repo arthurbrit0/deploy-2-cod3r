@@ -5,7 +5,6 @@ import { twm } from "@/utils/tw";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Send, MoreVertical, Phone, Video, SmilePlus } from "lucide-react";
-import Title from "@/features/shared/components/Title";
 
 export function Groups() {
   const features = [
