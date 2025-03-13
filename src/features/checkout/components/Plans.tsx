@@ -70,16 +70,13 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
 
   return (
     <div>
-      <BackgroundBeams className="h-auto md:h-[75vh]" />
+      <BackgroundBeams className="h-auto md:h-[82vh]" />
       <div className="relative h-full mb-16 w-full overflow-hidden bg-none">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="flex flex-col space-y-2 pb-8">
             <h2 className="text-center text-4xl font-bold tracking-tight text-white">
               Escolha seu plano clicando no botão de sua escolha abaixo e garanta sua vaga
             </h2>
-            <p className="text-md text-center font-semibold text-gray-200">
-              Confira os planos da Formação DEV
-            </p>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {pricingPlans.map((plan, index) => {
@@ -103,10 +100,9 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex-1">
-                      <div className="flex items-baseline">
-                        <span className="text-2xl font-semibold text-white">R$</span>
-                        <span className="text-5xl font-bold text-white">{plan.price}</span>
-                        <span className="ml-2 text-gray-400">s/ juros</span>
+                      <div className="flex flex-col items-baseline">
+                        <span className="text-2xl font-medium text-white">12x de R$</span>
+                        <span className="text-6xl font-bold text-white">{plan.price}</span>
                       </div>
                       <p className="mt-1 text-sm text-purple-200">{plan.duration}</p>
                       {plan.originalPrice && (

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import CheckoutSection from '@/features/checkout/pages/CheckoutPage';
-import type { Summary } from '@/features/checkout/components/teste';
+import type { Summary } from '@/features/checkout/components';
 
 const initialSummary: Summary = {
   totalTracks: 0,
@@ -12,9 +12,9 @@ const initialSummary: Summary = {
 
 export default function AssinaturaPage() {
   const [selectedPlan, setSelectedPlan] = useState({
-    price: "116,41",
+    price: "119,74",
     duration: "1 ANO DE ACESSO",
-    total: "R$ 1.397"
+    total: "R$ 1.197"
   });
 
   const [summary, setSummary] = useState<Summary>(initialSummary);
