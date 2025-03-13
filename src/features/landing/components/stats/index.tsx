@@ -1,6 +1,8 @@
-import { BookOpenCheck, Code2, HeartHandshake, Rocket, Shield, Users, Users2, Wallet } from "lucide-react";
+import { GitBranchIcon, Hammer, Headset, MessageSquareText,ScrollText,  Users, Video} from "lucide-react";
 import { FeatureCard } from "../../../../components/ui/feature-sections";
 import Title from "@/features/shared/components/Title";
+import { IconCertificate } from "@tabler/icons-react";
+
 
 interface Feature {
     title: string;
@@ -13,43 +15,43 @@ export default function StatsSection() {
     const defaultFeatures: Feature[] = [
         {
           title: "Mentorias ao vivo",
-          description: "Participe de sessões exclusivas de mentoria ao vivo conosco",
-          icon: Rocket,
+          description: "Aulas ao vivo com muitas interações em grupo pelo Google Meet",
+          icon: Video,
         },
         {
-          title: "Projetos em Equipe",
-          description: "Trabalhe em projetos em equipe para praticar o que aprendeu",
-          icon: Users2,
-        },
-        {
-          title: "Clube do Livro",
-          description: "Participe de discussões sobre livros e artigos com a comunidade",
-          icon: BookOpenCheck,
+          title: "Projeto Open-Source",
+          description: "Participe de fato de um projeto real diferente de tudo que já fez",
+          icon: GitBranchIcon,
         },
         {
           title: "Suporte Dedicado",
-          description: "Tenha acesso a suporte dedicado para tirar suas dúvidas",
-          icon: HeartHandshake,
+          description: "Conte com um time de especialistas para tirar todas as suas dúvidas.",
+          icon: Headset,
         },
         {
-          title: 'Projeto open-source',
-          description: 'Contribua com a comunidade e desenvolva um projeto open-source.',
-          icon: Code2,
+          title: "Comunidade Exclusiva",
+          description: "Troque experiências e faça networking com pessoas do mundo todo.",
+          icon: MessageSquareText,
         },
         {
-          title: 'Aprendizado em equipe',
-          description: 'Trabalhe em equipe para praticar o que aprendeu',
-          icon: Shield,
-        },
-        {
-          title: 'Mentorias ao vivo',
-          description: 'Participe de sessões exclusivas de mentoria sobre o projeto',
-          icon: Wallet,
-        },
-        {
-          title: 'Suporte dedicado',
-          description: 'Tenha acesso a suporte dedicado para tirar suas dúvidas',
+          title: 'Projetos em equipe',
+          description: 'Tenha a possibilidade de desenvolver projetos em grupo aprendendo e ensinando',
           icon: Users,
+        },
+        {
+          title: 'Certificados',
+          description: 'Certificados individuais por curso, trilha e geral em português e inglês.',
+          icon: IconCertificate,
+        },
+        {
+          title: 'Projetos reais',
+          description: 'Várias aplicações reais serão construídas do zero durante toda a jornada',
+          icon: Hammer,
+        },
+        {
+          title: 'Fórum de discussão',
+          description: 'Interaja com a equipe de professores e outros alunos sobre os assuntos estudados',
+          icon: ScrollText,
         },
       ];
 
