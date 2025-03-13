@@ -9,7 +9,7 @@ export default async function Home() {
     return (
       <FormacaoLandingPage 
         video={res['link-video-iniciante']}
-        heroSlogan="Aprenda a programar com a melhor plataforma de ensino"
+        heroSlogan="É impossível resumir em uma frase, assista o vídeo e entenda porque a Formação é indispensável para VOCÊ!"
         qtyCourses={courses.length}
       />
     );

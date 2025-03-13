@@ -14,14 +14,13 @@ const EadSection = () => {
               </span>
             </div>
             <h1 className="text-5xl font-bold leading-tight">
-              Desenvolva um projeto{' '}
-              <span className="bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-transparent">
-                com a comunidade
+              Faça parte de fato do desenvolvimento de um <span className="bg-gradient-to-r from-purple-500 to-pink-400 bg-clip-text text-transparent">
+                projeto real
               </span>
             </h1>
             <p className="text-gray-400 text-xl max-w-md">
-              Participe do desenvolvimento de uma plataforma EAD open-source
-              e aprenda na prática com a comunidade.
+            Nenhuma outra empresa de ensino está colocando seus alunos para desenvolverem juntos um projeto real 
+            e com mentoria, projeto esse que é o próprio negócio da nossa empresa.
             </p>
             <Button
               href="/projeto-ead"

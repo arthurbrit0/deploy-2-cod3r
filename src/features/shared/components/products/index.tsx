@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CircleCheck, Terminal } from 'lucide-react';
+import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CircleCheck, Terminal, FastForward } from 'lucide-react';
 import Section from '../../layouts/SectionWrapper';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { CardWithCursor } from '@/components/ui/card-with-cursor';
@@ -10,79 +10,29 @@ import ProductsStats from './ProductsStats';
 
 export const products = [
   {
-    title: 'Fundamentos',
+    title: 'Mentoria',
     description:
-      'São mais de 20 cursos em 4 trilhas para que você saia do absoluto zero para fundamentos sólidos de programação.',
-    icon: Code,
-    link: '/areas/fundamentos-dev',
+      'Aulas ao vivo com muitas interações em grupo pelo Google Meet.',
+    icon: PlaySquare,
+    link: '/areas/mentoria-dev',
     technologies: [
       {
-        name: 'HTML',
-        description: 'Linguagem de marcação para web',
-        image: '/tech/html.png',
+        name: 'Google Meet',
+        description: 'Video conferencing tool.',
+        image: '/tech/google-meet.png',
       },
       {
-        name: 'CSS',
-        description: 'Estilização de páginas web',
-        image: '/tech/css.png',
+        name: 'Zoom',
+        description: 'Popular videoconferencing.',
+        image: '/tech/zoom.png',
       },
       {
-        name: 'JavaScript',
-        description: 'O "cérebro" da web.',
-        image: '/tech/javascript.png',
+        name: 'Slack',
+        description: 'Team collaboration platform.',
+        image: '/tech/slack.png',
       },
     ],
-    features: ['Fundamentos da Web', 'Lógica de Programação', 'Estruturas de Dados'],
-  },
-  {
-    title: 'IA',
-    description:
-      'A inteligência artificial veio para ficar, e enquanto tem gente fugindo dela, nós vamos te mostrar como tirar proveito dessa ferramenta.',
-    icon: Bot,
-    link: '/areas/ia-dev',
-    technologies: [
-      {
-        name: 'TensorFlow',
-        description: 'ML framework.',
-        image: '/tech/tensorflow.png',
-      },
-      {
-        name: 'PyTorch',
-        description: 'Deep learning library.',
-        image: '/tech/pytorch.png',
-      },
-      {
-        name: 'Scikit-Learn',
-        description: 'Data mining library.',
-        image: '/tech/scikitlearn.png',
-      },
-    ],
-    features: ['Machine Learning', 'Deep Learning', 'Natural Language Processing'],
-  },
-  {
-    title: 'Especialista',
-    description:
-      'Hora de aprofundar nas principais tecnologias do mercado e ajustar o foco para o desenvolvimento de aplicações completas.',
-    icon: Brain,
-    link: '/areas/especialista-dev',
-    technologies: [
-      {
-        name: 'React',
-        description: 'Perfeito para criação de interfaces',
-        image: '/tech/react.png',
-      },
-      {
-        name: 'Node.js',
-        description: 'Seu backend em JavaScript',
-        image: '/tech/nodejs.png',
-      },
-      {
-        name: 'Next.Js',
-        description: 'API query language.',
-        image: '/tech/graphql.png',
-      },
-    ],
-    features: ['Frontend Avançado', 'Backend Development', 'Full Stack Integration'],
+    features: ['Live Sessions', 'Group Interactions', 'Personal Guidance'],
   },
   {
     title: 'Arquiteto',
@@ -110,6 +60,81 @@ export const products = [
     features: ['System Design', 'Cloud Architecture', 'DevOps Practices'],
   },
   {
+    title: 'Especialista',
+    description:
+      'Hora de aprofundar nas principais tecnologias do mercado e ajustar o foco para o desenvolvimento de aplicações completas.',
+    icon: Brain,
+    link: '/areas/especialista-dev',
+    technologies: [
+      {
+        name: 'React',
+        description: 'Perfeito para criação de interfaces',
+        image: '/tech/react.png',
+      },
+      {
+        name: 'Node.js',
+        description: 'Seu backend em JavaScript',
+        image: '/tech/nodejs.png',
+      },
+      {
+        name: 'Next.Js',
+        description: 'API query language.',
+        image: '/tech/graphql.png',
+      },
+    ],
+    features: ['Frontend Avançado', 'Backend Development', 'Full Stack Integration'],
+  },
+  {
+    title: 'IA',
+    description:
+      'A inteligência artificial veio para ficar, e enquanto tem gente fugindo dela, nós vamos te mostrar como tirar proveito dessa ferramenta.',
+    icon: Bot,
+    link: '/areas/ia-dev',
+    technologies: [
+      {
+        name: 'TensorFlow',
+        description: 'ML framework.',
+        image: '/tech/tensorflow.png',
+      },
+      {
+        name: 'PyTorch',
+        description: 'Deep learning library.',
+        image: '/tech/pytorch.png',
+      },
+      {
+        name: 'Scikit-Learn',
+        description: 'Data mining library.',
+        image: '/tech/scikitlearn.png',
+      },
+    ],
+    features: ['Machine Learning', 'Deep Learning', 'Natural Language Processing'],
+  },
+  {
+    title: 'Fundamentos',
+    description:
+      'São mais de 20 cursos em 4 trilhas para que você saia do absoluto zero para fundamentos sólidos de programação.',
+    icon: Code,
+    link: '/areas/fundamentos-dev',
+    technologies: [
+      {
+        name: 'HTML',
+        description: 'Linguagem de marcação para web',
+        image: '/tech/html.png',
+      },
+      {
+        name: 'CSS',
+        description: 'Estilização de páginas web',
+        image: '/tech/css.png',
+      },
+      {
+        name: 'JavaScript',
+        description: 'O "cérebro" da web.',
+        image: '/tech/javascript.png',
+      },
+    ],
+    features: ['Fundamentos da Web', 'Lógica de Programação', 'Estruturas de Dados'],
+  },
+  {
     title: 'Humano',
     description:
       'Nem só de bytes vive um programador, então vamos falar de rotina de estudos, livros sugeridos, soft skills e etc.',
@@ -135,29 +160,29 @@ export const products = [
     features: ['Soft Skills', 'Career Development', 'Team Collaboration'],
   },
   {
-    title: 'Mentoria',
+    title: 'Express',
     description:
-      'Aulas ao vivo com muitas interações em grupo pelo Google Meet.',
-    icon: PlaySquare,
-    link: '/areas/mentoria-dev',
+      'Formação para quem quer aprender a desenvolver aplicações web de forma rápida e completa.',
+    icon: FastForward,
+    link: '/express',
     technologies: [
       {
-        name: 'Google Meet',
-        description: 'Video conferencing tool.',
+        name: 'Tech 1',
+        description: 'Descrição da tecnologia',
         image: '/tech/google-meet.png',
       },
       {
-        name: 'Zoom',
-        description: 'Popular videoconferencing.',
+        name: 'Tech 2',
+        description: 'Descrição da tecnologia',
         image: '/tech/zoom.png',
       },
       {
-        name: 'Slack',
-        description: 'Team collaboration platform.',
+        name: 'Tech 3',
+        description: 'Descrição da tecnologia',
         image: '/tech/slack.png',
       },
     ],
-    features: ['Live Sessions', 'Group Interactions', 'Personal Guidance'],
+    features: ['Formação completa para desenvolvedores', 'Do Zero ao Mercado em um curso rápido e prático', 'Mentorias e suporte especializado'],
   },
 ];
 

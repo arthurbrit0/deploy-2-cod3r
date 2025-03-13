@@ -22,27 +22,29 @@ interface PricingCardsProps {
 const pricingPlans: PricingPlan[] = [
   {
     title: "1 ANO DE ACESSO",
-    price: "116,41",
+    price: "119,74",
     duration: "1 ANO DE ACESSO",
-    originalPrice: "R$ 1.997",
-    currentPrice: "R$ 1.397",
-    savings: "ECONOMIA DE R$ 600",
+    originalPrice: "R$ 2.297",
+    currentPrice: "R$ 1.197",
+    savings: "ECONOMIA DE R$ 1.100",
     buttonText: "PLANO SELECIONADO"
   },
   {
     title: "2 ANOS DE ACESSO",
-    price: "166,41",
+    price: "189,76",
     duration: "2 ANOS DE ACESSO",
-    currentPrice: "R$ 1.997",
+    originalPrice: "R$ 4.594",
+    currentPrice: "R$ 1.897",
+    savings: "ECONOMIA DE R$ 2.697",
     buttonText: "GARANTIR MINHA VAGA"
   },
   {
     title: "3 ANOS DE ACESSO",
-    price: "216,41",
+    price: "249,98",
     duration: "3 ANOS DE ACESSO",
-    originalPrice: "R$ 3.994",
-    currentPrice: "R$ 2.597",
-    savings: "ECONOMIA DE R$ 1.397",
+    originalPrice: "R$ 6.891",
+    currentPrice: "R$ 2.499",
+    savings: "ECONOMIA DE R$ 4.392",
     buttonText: "GARANTIR MINHA VAGA"
   }
 ];
@@ -73,7 +75,7 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="flex flex-col space-y-2 pb-8">
             <h2 className="text-center text-4xl font-bold tracking-tight text-white">
-              Escolha seu plano e garanta sua vaga na Formação DEV
+              Escolha seu plano clicando no botão de sua escolha abaixo e garanta sua vaga
             </h2>
             <p className="text-md text-center font-semibold text-gray-200">
               Confira os planos da Formação DEV
@@ -133,7 +135,7 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
                     <div className="flex flex-row items-center justify-center mt-4 gap-2">
                       <Shield className="text-emerald-400" />
                       <p className="text-emerald-400 text-center font-bold text-sm">
-                        Garantia de 7 dias
+                        Garantia de 15 dias
                       </p>
                     </div>
                   </div>

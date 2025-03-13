@@ -3,7 +3,7 @@ import MovingLogos from './cards/MovingLogos';
 
 const ImageDisplay: React.FC = () => {
   return (
-    <div className="relative flex items-center justify-center">
+    <div className="relative flex items-center justify-center left-5">
       <div className="absolute -left-14 h-full">
         <MovingLogos 
           direction="down"

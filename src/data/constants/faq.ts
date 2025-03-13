@@ -3,9 +3,9 @@ import Question from '../model/Question'
 const faq: Question[] = [
     {
         id: '1',
-        title: 'O que é a Formação DEV Express?',
+        title: 'O que é a Formação DEV?',
         content:
-            'É uma formação intensiva em programação para capacitar iniciantes e profissionais em transição de carreira a ingressar no mercado de trabalho de forma rápida e didática. A Formação DEV Express é o caminho mais rápido no mercado para você se tornar um Desenvolvedor Full Stack',
+            'É uma formação que tem o objetivo de preparar o desenvolvedor para o mercado de trabalho. Indo desde o início, mesmo que a pessoa tenha zero conhecimento de programação, até conteúdos avançados de arquitetura de software.',
     },
     {
         id: '2',
@@ -26,7 +26,7 @@ const faq: Question[] = [
     {
         id: '5',
         title: 'Qual será o formato das aulas?',
-        content: 'Conteúdo 100% online.',
+        content: 'Conteúdo 100% online. Aulas gravadas e também alguns eventos ao vivo.',
     },
     {
         id: '6',
@@ -38,12 +38,7 @@ const faq: Question[] = [
         id: '7',
         title: 'Ainda estou com dúvidas, como posso saber mais?',
         content: 'Se quiser tirar mais dúvidas, envie-nos e-mail para: suporte@formacao.dev',
-    },
-    {
-        id: '8',
-        title: 'Por quanto tempo terei acesso aos conteúdos?',
-        content: 'Dois anos.',
-    },
+    }
 ]
 
 export default faq

@@ -24,7 +24,7 @@ interface FormacaoLandingProps {
 export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: FormacaoLandingProps) {
   return (
     <LandingLayout>
-      <Section className="py-8" backgroundUrl="/background.svg">
+      <Section className="pt-16" backgroundUrl="/background.svg">
         <Hero slogan={heroSlogan} />
         <Video
           url={video}
@@ -40,7 +40,7 @@ export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: F
           <ProductsSection />
         </Container>
       </Section>
-      <Section>
+      <Section backgroundUrl='/bg.svg' style={{ backgroundPosition: 'top' }}>
         <TrackAudience />
       </Section>
       <Section backgroundUrl="/bg-roxo-verde.svg" style={{ backgroundPosition: 'top' }}>
@@ -56,7 +56,7 @@ export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: F
         <VideoTestimonies />
       </Container>
       <TestimonialsSection />
-      <Section backgroundUrl="/bg.svg" style={{ backgroundPosition: 'top' }}>
+      <Section backgroundUrl='/bg-quantificador.svg'>
         <Container>
           <CommunitySection />
         </Container>

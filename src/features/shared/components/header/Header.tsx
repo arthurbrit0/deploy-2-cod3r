@@ -88,7 +88,7 @@ export function Header() {
     <header className="bg-black border-b border-zinc-950 py-12 flex justify-between items-center px-6 md:px-20 h-16 sticky top-0 z-50">
       <div className="flex items-center gap-6 md:gap-12">
         <Link href="/" className="flex-shrink-0">
-          <Image src="/logo.svg" width={150} height={0} alt="Logo" />
+          <Image src="/logo.png" width={130} height={0} alt="Logo" />
         </Link>
         <div className="hidden md:block">
           <NavigationMenu>

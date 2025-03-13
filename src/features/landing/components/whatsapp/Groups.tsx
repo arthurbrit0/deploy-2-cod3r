@@ -179,7 +179,7 @@ export const SkeletonOne = () => {
             </div>
             <div>
               <h3 className="font-semibold text-black dark:text-white">Formação DEV</h3>
-              <p className="text-xs text-gray-500 dark:text-gray-400">+500 membros</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">Leonardo Leitão, Letícia Garcez, Lucas Galdino...</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
