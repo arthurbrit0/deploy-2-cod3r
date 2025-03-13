@@ -8,7 +8,7 @@ interface Feature {
 
 export function FeatureCard({ features }: { readonly features: Feature[] }) {
   return (
-    <div className="py-24">
+    <div className="pt-16 pb-32">
       <div className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-4 max-w-7xl mx-auto px-4">
         {features.map((feature) => (
           <div

@@ -1,15 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Users, Video, BookOpen, Headset, GitFork } from "lucide-react";
+import { Video, BookOpen } from "lucide-react";
 import { IconBrandWhatsapp, IconCertificate } from "@tabler/icons-react";
 import BaseSection from "../../layouts/BaseSection";
 import { SkeletonOne } from "@/features/landing/components/whatsapp/Groups";
 import MentoriaContent from "./features/Mentorship";
 import ClubeDoLivroContent from "./features/BookClub";
-import SuporteContent from "./features/Support";
-import ProjetosEquipeContent from "./features/TeamProjects";
-import OpenSourceContent from "./features/OpenSource";
 import CertificadosContent from "./features/Certificates";
 
 const sections = [
@@ -26,28 +23,10 @@ const sections = [
     component: <ClubeDoLivroContent />,
   },
   {
-    id: "suporte",
-    title: "Suporte Especializado",
-    icon: <Headset className="w-6 h-6" />,
-    component: <SuporteContent />,
-  },
-  {
     id: "whatsapp",
     title: "Comunidade do WhatsApp",
     icon: <IconBrandWhatsapp className="w-6 h-6" />,
     component: <SkeletonOne />,
-  },
-  {
-    id: "projetos-equipe",
-    title: "Projetos em Equipe",
-    icon: <Users className="w-6 h-6" />,
-    component: <ProjetosEquipeContent />,
-  },
-  {
-    id: "open-source",
-    title: "Projeto Open Source",
-    icon: <GitFork className="w-6 h-6" />,
-    component: <OpenSourceContent />,
   },
   {
     id: "certificado",
