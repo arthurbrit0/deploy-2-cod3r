@@ -18,7 +18,7 @@ export default function Faq() {
                         value: 'Frequentes',
                     },
                 ]}
-                secondary="Tire suas dúvidas sobre a Formação Express"
+                secondary="Tire suas dúvidas sobre a Formação DEV"
             />
 
             <Accordion.Root
@@ -70,7 +70,6 @@ const AccordionContent = React.forwardRef<HTMLDivElement, Accordion.AccordionCon
   ({ children, ...props }: Accordion.AccordionContentProps, ref) => (
     <Accordion.Content {...props} ref={ref}>
       <AnimatePresence>
-        {/* Radix automatically mounts/unmounts based on state */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
