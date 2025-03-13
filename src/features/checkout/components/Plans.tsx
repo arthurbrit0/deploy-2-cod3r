@@ -75,7 +75,7 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="flex flex-col space-y-2 pb-8">
             <h2 className="text-center text-4xl font-bold tracking-tight text-white">
-              Escolha seu plano clicando no botão de sua escolha abaixo e garanta sua vaga
+              Clique na opção de sua escolha abaixo e garanta sua vaga
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">

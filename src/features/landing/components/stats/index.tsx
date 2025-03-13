@@ -3,7 +3,6 @@ import { FeatureCard } from "../../../../components/ui/feature-sections";
 import Title from "@/features/shared/components/Title";
 import { IconCertificate } from "@tabler/icons-react";
 
-
 interface Feature {
     title: string;
     description: string;

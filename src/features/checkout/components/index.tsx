@@ -10,6 +10,7 @@ import {
   Users,
   GitBranch,
   LifeBuoy,
+  MessageCircle,
 } from 'lucide-react';
 import Image from 'next/image';
 import Title from '../../shared/components/Title';
@@ -154,13 +155,29 @@ function CheckoutPage({ summary, selectedPlan }: CheckoutPageProps) {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center my-8">
-        <div className="h-[2px] flex-1 bg-gray-200 opacity-50" />
-        <h2 className="mx-4 text-2xl font-bold text-center">
-          Assinando a Formação DEV, você reberá:
-        </h2>
-        <div className="h-[2px] flex-1 bg-gray-200 opacity-50" />
-      </div>
+
+        <div className="bg-[#00291D] rounded-xl p-6 flex items-center justify-center">
+          <div className="flex items-center max-w-3xl">
+            <div className="bg-[#04D361]/10 p-4 rounded-full flex-shrink-0">
+              <Shield className="text-[#04D361] w-10 h-10" />
+            </div>
+            <div className="ml-6">
+              <h4 className="text-2xl font-bold text-[#04D361]">Garantia de 15 dias</h4>
+              <p className="text-[#E1E1E6] text-lg">
+                Se não gostar ou ver que não é para você, devolvemos o seu dinheiro!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center">
+          <div className="h-[2px] flex-1 bg-gray-200 opacity-50" />
+          <h2 className="mx-4 text-2xl font-bold text-center">
+            Assinando a Formação DEV, você receberá:
+          </h2>
+          <div className="h-[2px] flex-1 bg-gray-200 opacity-50" />
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {features.map(({ text, Icon }, index) => (
             <div
@@ -175,23 +192,18 @@ function CheckoutPage({ summary, selectedPlan }: CheckoutPageProps) {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-[#00291D] rounded-xl p-8 flex flex-col items-center text-center">
-            <div className="bg-[#04D361]/10 p-4 rounded-full mb-4">
-              <Shield className="text-[#04D361] w-8 h-8" />
+        <div className="bg-[#202024] rounded-lg p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-left max-w-xl">
+              <h3 className="text-2xl font-bold mb-3">Ficou com alguma dúvida?</h3>
+              <p className="text-[#C4C4CC] text-lg">
+                Envie uma mensagem e converse com uma pessoa real. Nosso time está pronto para te ajudar!
+              </p>
             </div>
-            <h4 className="text-2xl font-bold text-[#04D361] mb-3">Garantia de 15 dias</h4>
-            <p className="text-[#E1E1E6] text-lg max-w-md">
-              Se não gostar ou ver que não é para você, devolvemos o seu dinheiro!
-            </p>
-          </div>
-          
-          <div className="bg-[#202024] rounded-lg p-8 text-center">
-            <h3 className="text-xl mb-3 font-bold">Ficou com alguma dúvida?</h3>
-            <p className="text-[#C4C4CC] text-xl mb-6">
-              Envie uma mensagem e converse com uma pessoa real.
-            </p>
-            <button className="w-full bg-[#00875F] text-white font-bold hover:bg-emerald-500 px-6 py-4 rounded-lg transition-colors text-lg">
+            <button className="flex items-center gap-3 bg-[#00875F] text-white font-bold hover:bg-emerald-500 px-8 py-4 rounded-lg transition-colors text-lg group whitespace-nowrap">
+              <div className="bg-white/10 p-2 rounded-lg group-hover:scale-110 transition-transform">
+                <MessageCircle className="w-6 h-6" />
+              </div>
               FALE CONOSCO NO WHATSAPP
             </button>
           </div>
