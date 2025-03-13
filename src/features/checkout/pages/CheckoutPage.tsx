@@ -10,7 +10,7 @@ import Faq from '@/features/shared/components/faq';
 import Section from '../../shared/layouts/SectionWrapper';
 import TestimonialCarousel from '@/features/checkout/components/TestimonialsCheckout';
 import { PricingCards } from '../components/Plans';
-import Checkout, { Summary } from '@/features/checkout/components/teste';
+import Checkout, { Summary } from '@/features/checkout/components';
 
 interface SelectedPlan {
   price: string;
