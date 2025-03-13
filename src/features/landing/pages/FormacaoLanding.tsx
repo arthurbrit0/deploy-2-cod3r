@@ -8,19 +8,20 @@ import ProductsSection from '@/features/shared/components/products'
 import { TestimonialsSection } from '@/features/shared/components/testimonies/infinite-scroll/TestimonialsSection'
 import { CommunitySection } from '@/features/landing/components/community/CommunitySection'
 import VideoTestimonies from '@/features/shared/components/testimonies/video'
-import Resource from '@/features/landing/components/resource'
 import Faq from '@/features/shared/components/faq'
 import EadSection from '@/features/ead/components'
 import BonusFeatures from '@/features/shared/components/bonus-features'
 import Cta from '@/features/shared/components/cta'
 import { TrackAudience } from '@/features/products/components/TrackAudience'
+import Banner from '../components/banner'
 
 interface FormacaoLandingProps {
   video: string
   heroSlogan: string
+  qtyCourses: number
 }
 
-export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandingProps) {
+export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: FormacaoLandingProps) {
   return (
     <LandingLayout>
       <Section className="py-8" backgroundUrl="/background.svg">
@@ -30,6 +31,7 @@ export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandi
           className="bg-none md:bg-[url('/background.svg')] bg-fill bg-center"
         />
       </Section>
+      <Banner qtyCourses={qtyCourses} />
       <Container>
         <Stats />
       </Container>
@@ -59,12 +61,6 @@ export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandi
           <CommunitySection />
         </Container>
       </Section>
-      <Container>
-        <Resource />
-      </Container>
-      {/* <Container>
-        <Warranty />
-      </Container> */}
       <Container>
         <Faq />
       </Container>

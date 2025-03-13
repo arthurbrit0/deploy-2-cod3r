@@ -68,7 +68,7 @@ export const BackgroundBeams = React.memo(
     return (
       <div
         className={twm(
-          "absolute min-h-[150vh] md:min-h-0 h-full w-full inset-0 bg-gradient-to-r from-pink-500 to-purple-600 [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
+          "absolute min-h-[150vh] md:min-h-0 h-full w-full inset-0 bg-gradient-to-r from-pink-500 to-indigo-600 [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
           className
         )}
       >

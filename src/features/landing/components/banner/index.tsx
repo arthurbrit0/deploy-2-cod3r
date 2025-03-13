@@ -1,7 +1,7 @@
 import { IconCheck } from '@tabler/icons-react'
 import Button from '../../../shared/components/Button'
 import Container from '../../../shared/layouts/Container'
-import urls from '@/data/constants/urls'
+import { BackgroundBeams } from '@/components/ui/background-beams'
 
 export interface BannerProps {
     qtyCourses: number
@@ -12,12 +12,12 @@ export default function Banner(props: BannerProps) {
         <div
             className="
                 flex flex-col items-center lg:items-start gap-10 relative
-                bg-gradient-to-r from-[#9D174D] to-[#1E40AF]
             "
         >
-            <Container className="flex flex-col py-10 gap-7 relative">
+            <BackgroundBeams />
+            <Container className="flex flex-col py-8 gap-7 relative">
                 <div className="flex flex-col items-center gap-1 text-center">
-                    <div className="flex gap-2 text-xl sm:text-2xl lg:text-3xl text-white font-medium">
+                    <div className="flex gap-2 text-xl font-bold sm:text-2xl lg:text-3xl text-white">
                         Comprando hoje você garante:
                     </div>
                 </div>
@@ -51,7 +51,7 @@ export default function Banner(props: BannerProps) {
                 </div>
 
                 <div className="absolute bottom-0 flex justify-center w-full -mb-5">
-                    <Button primary href={urls.checkout}>
+                    <Button primary href="/assinatura">
                         <IconCheck size={24} />
                         <span>Garantir Minha Vaga</span>
                     </Button>
