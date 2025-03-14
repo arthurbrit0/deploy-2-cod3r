@@ -29,7 +29,7 @@ export default function ExpressLandingPage({ courses, video, heroSlogan }: Expre
           url={video}
           className="md:bg-[url('/background.svg')] bg-fill bg-center"
         />
-        <Banner qtyCourses={courses.length} />
+        <Banner />
       </Section>
       <Container>
         <Subject />

@@ -18,10 +18,9 @@ import Banner from '../components/banner'
 interface FormacaoLandingProps {
   video: string
   heroSlogan: string
-  qtyCourses: number
 }
 
-export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: FormacaoLandingProps) {
+export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandingProps) {
   return (
     <LandingLayout>
       <Section className="pt-16" backgroundUrl="/background.svg">
@@ -31,7 +30,7 @@ export default function FormacaoLandingPage({ video, heroSlogan, qtyCourses }: F
           className="bg-none md:bg-[url('/background.svg')] bg-fill bg-center"
         />
       </Section>
-      <Banner qtyCourses={qtyCourses} />
+      <Banner/>
       <Container>
         <Stats />
       </Container>
