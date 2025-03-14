@@ -54,14 +54,14 @@ export default function ClubeDoLivroContent() {
         <Title
           main={[
             {
-              value: 'Discussões sobre',
+              value: 'Aprenda direto da',
             },
             {
-              value: 'Livros de Tecnologia',
+              value: 'fonte primária',
               gradient: true,
             },
           ]}
-          secondary="Participe de discussões sobre livros de tecnologia e aprimore suas habilidades"
+          secondary="Beba da fonte de clássicos de tecnologia e de outros livros importantes na jornada de qualquer profissional"
         />
       </div>
 

@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Video, BookOpen } from "lucide-react";
-import { IconBrandWhatsapp, IconCertificate } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import BaseSection from "../../layouts/BaseSection";
 import { SkeletonOne } from "@/features/landing/components/whatsapp/Groups";
 import MentoriaContent from "./features/Mentorship";
 import ClubeDoLivroContent from "./features/BookClub";
-import CertificadosContent from "./features/Certificates";
+// import CertificadosContent from "./features/Certificates";
 
 const sections = [
   {
@@ -28,12 +28,12 @@ const sections = [
     icon: <IconBrandWhatsapp className="w-6 h-6" />,
     component: <SkeletonOne />,
   },
-  {
-    id: "certificado",
-    title: "Certificados",
-    icon: <IconCertificate className="w-6 h-6" />,
-    component: <CertificadosContent />,
-  },
+  // {
+  //   id: "certificado",
+  //   title: "Certificados",
+  //   icon: <IconCertificate className="w-6 h-6" />,
+  //   component: <CertificadosContent />,
+  // },
 ];
 
 function BonusFeatures() {

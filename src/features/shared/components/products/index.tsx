@@ -1,93 +1,176 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CircleCheck, Terminal, FastForward } from 'lucide-react';
+import React, { JSX, useState } from 'react';
+import { Brain, Code, Users, Bot, Hexagon, PlaySquare, ArrowBigRight, CheckCircle as CircleCheck, Terminal, FastForward, Laptop } from 'lucide-react';
 import Section from '../../layouts/SectionWrapper';
 import { AnimatedTooltip } from '@/components/ui/animated-tooltip';
 import { CardWithCursor } from '@/components/ui/card-with-cursor';
 import Title from '../Title';
 import ProductsStats from './ProductsStats';
 
-export const products = [
+export const rootCategories = [
   {
-    title: 'Mentoria',
-    description:
-      'Aulas ao vivo com muitas interações em grupo pelo Google Meet.',
-    icon: PlaySquare,
-    link: '/areas/mentoria-dev',
-    technologies: [
+    title: 'Formação DEV',
+    icon: Laptop,
+    items: [
       {
-        name: 'Google Meet',
-        description: 'Video conferencing tool.',
-        image: '/tech/google-meet.png',
+        title: 'Mentoria',
+        description: `
+Você não precisa estudar só. Participe das nossas mentorias ao vivo em grupo! 
+Uma oportunidade para todos os alunos discutirem temas relevantes e acelerarem 
+suas carreiras, e, para sua conveniência, todas as sessões são gravadas, 
+permitindo que você assista quando e onde quiser, mesmo que não possa participar 
+ao vivo. Essa é uma área fundamental para o seu crescimento!
+        `,
+        icon: PlaySquare,
+        link: '/areas/mentoria-dev',
+        technologies: [
+          {
+            name: 'Google Meet',
+            description: 'Video conferencing tool.',
+            image: '/tech/google-meet.png',
+          },
+          {
+            name: 'Zoom',
+            description: 'Popular videoconferencing.',
+            image: '/tech/zoom.png',
+          },
+          {
+            name: 'Slack',
+            description: 'Team collaboration platform.',
+            image: '/tech/slack.png',
+          },
+        ],
+        features: ['Discussões ao vivo', 'Projetos reais', 'Suporte personalizado'],
       },
       {
-        name: 'Zoom',
-        description: 'Popular videoconferencing.',
-        image: '/tech/zoom.png',
+        title: 'Arquiteto',
+        description: `
+A área do Arquiteto da Formação DEV eleva a discussão para um nível estratégico e profissional, 
+abordando temas complexos de forma didática e aprofundada. Essa etapa alarga a visão sobre a 
+arquitetura de software, explorando questões cruciais para o desenvolvimento de sistemas robustos 
+e de fácil manutenção.
+        `,
+        icon: Hexagon,
+        link: '/areas/arquiteto-dev',
+        technologies: [
+          {
+            name: 'Docker',
+            description: 'Containerization platform.',
+            image: '/tech/docker.png',
+          },
+          {
+            name: 'Kubernetes',
+            description: 'Container orchestration system.',
+            image: '/tech/kubernetes.png',
+          },
+          {
+            name: 'AWS',
+            description: 'Cloud services platform.',
+            image: '/tech/aws.png',
+          },
+        ],
+        features: ['Arquitetura de Software', 'Boas práticas', 'Projetos Reais'],
       },
       {
-        name: 'Slack',
-        description: 'Team collaboration platform.',
-        image: '/tech/slack.png',
+        title: 'Especialista',
+        description: `
+Você vai aprofundar os seus conhecimentos nas principais tecnologias do mercado e direcionar 
+o foco para o desenvolvimento de aplicações completas. Nesta etapa, você vai mergulhar em temas 
+avançados, dominando as ferramentas e frameworks mais utilizados pelas empresas, preparando-se 
+para enfrentar desafios reais e construir soluções inovadoras.
+        `,
+        icon: Brain,
+        link: '/areas/especialista-dev',
+        technologies: [
+          {
+            name: 'React',
+            description: 'Perfeito para criação de interfaces',
+            image: '/tech/react.png',
+          },
+          {
+            name: 'Node.js',
+            description: 'Seu backend em JavaScript',
+            image: '/tech/nodejs.png',
+          },
+          {
+            name: 'Next.Js',
+            description: 'API query language.',
+            image: '/tech/graphql.png',
+          },
+        ],
+        features: ['Desenvolvimento Full-Stack', 'Bancos de Dados', 'Infraestrutura', 'Projetos Reais'],
       },
+      {
+        title: 'Fundamentos',
+        description: `
+Aqui é o alicerce essencial para quem busca uma carreira em desenvolvimento. 
+Nesta área, você vai construir uma base sólida em programação, mesmo sem nunca 
+ter escrito uma linha de código antes. É o ponto de entrada e é um passo indispensável 
+para que quem está iniciando na área possa avançar com confiança para as demais áreas da Formação Dev.
+        `,
+        icon: Code,
+        link: '/areas/fundamentos-dev',
+        technologies: [
+          {
+            name: 'HTML',
+            description: 'Linguagem de marcação para web',
+            image: '/tech/html.png',
+          },
+          {
+            name: 'CSS',
+            description: 'Estilização de páginas web',
+            image: '/tech/css.png',
+          },
+          {
+            name: 'JavaScript',
+            description: 'O "cérebro" da web.',
+            image: '/tech/javascript.png',
+          },
+        ],
+        features: ['Fundamentos da Web', 'Lógica de Programação', 'Terminal', 'Git e GitHub'],
+      },
+      {
+        title: 'Humano',
+        description: `
+Aqui oferecemos conteúdos e ferramentas para aprimorar competências que vão além do código, 
+como por exemplo melhorar a forma como você estuda. Nesta área, temos cursos que abrangem diferentes 
+técnicas de estudo e ferramentas que podem ser usadas nesse processo, além do clube do livro, onde você 
+vai ter contato com os livros mais relevantes da área de tecnologia e obras fundamentais para o seu 
+desenvolvimento pessoal e profissional.
+        `,
+        icon: Users,
+        link: '/areas/humano-dev',
+        technologies: [
+          {
+            name: 'Design Thinking',
+            description: 'Creative problem-solving approach.',
+            image: '/tech/design-thinking.png',
+          },
+          {
+            name: 'Agile',
+            description: 'Efficient project management.',
+            image: '/tech/agile.png',
+          },
+          {
+            name: 'Communication',
+            description: 'Effective interpersonal skills.',
+            image: '/tech/communication.png',
+          },
+        ],
+        features: ['Clube do Livro', 'Guia de Estudos'],
+      }
     ],
-    features: ['Live Sessions', 'Group Interactions', 'Personal Guidance'],
   },
   {
-    title: 'Arquiteto',
-    description:
-      'Está preparado para um papo cabeça? Vamos alargar os temas e abordar os assuntos de forma profissional e didática.',
-    icon: Hexagon,
-    link: '/areas/arquiteto-dev',
-    technologies: [
-      {
-        name: 'Docker',
-        description: 'Containerization platform.',
-        image: '/tech/docker.png',
-      },
-      {
-        name: 'Kubernetes',
-        description: 'Container orchestration system.',
-        image: '/tech/kubernetes.png',
-      },
-      {
-        name: 'AWS',
-        description: 'Cloud services platform.',
-        image: '/tech/aws.png',
-      },
-    ],
-    features: ['System Design', 'Cloud Architecture', 'DevOps Practices'],
-  },
-  {
-    title: 'Especialista',
-    description:
-      'Hora de aprofundar nas principais tecnologias do mercado e ajustar o foco para o desenvolvimento de aplicações completas.',
-    icon: Brain,
-    link: '/areas/especialista-dev',
-    technologies: [
-      {
-        name: 'React',
-        description: 'Perfeito para criação de interfaces',
-        image: '/tech/react.png',
-      },
-      {
-        name: 'Node.js',
-        description: 'Seu backend em JavaScript',
-        image: '/tech/nodejs.png',
-      },
-      {
-        name: 'Next.Js',
-        description: 'API query language.',
-        image: '/tech/graphql.png',
-      },
-    ],
-    features: ['Frontend Avançado', 'Backend Development', 'Full Stack Integration'],
-  },
-  {
-    title: 'IA',
-    description:
-      'A inteligência artificial veio para ficar, e enquanto tem gente fugindo dela, nós vamos te mostrar como tirar proveito dessa ferramenta.',
+    title: 'Formação AI',
+    description: `
+A Formação AI coloca a inteligência artificial ao alcance do desenvolvedor. 
+O objetivo dessa área é capacitar o profissional a integrar a IA em seus projetos, 
+automatizar tarefas e otimizar processos de uma forma simples e rápida. 
+É uma área que está em pleno crescimento e que vamos explorar muito para dar aos 
+desenvolvedores todas as ferramentas para melhor aproveitar as oportunidades de mercado.
+    `,
     icon: Bot,
     link: '/areas/ia-dev',
     technologies: [
@@ -107,62 +190,15 @@ export const products = [
         image: '/tech/scikitlearn.png',
       },
     ],
-    features: ['Machine Learning', 'Deep Learning', 'Natural Language Processing'],
+    features: ['Fundamentos de IA', 'IA e Automações', 'Ferramentas para uso com IA'],
   },
   {
-    title: 'Fundamentos',
-    description:
-      'São mais de 20 cursos em 4 trilhas para que você saia do absoluto zero para fundamentos sólidos de programação.',
-    icon: Code,
-    link: '/areas/fundamentos-dev',
-    technologies: [
-      {
-        name: 'HTML',
-        description: 'Linguagem de marcação para web',
-        image: '/tech/html.png',
-      },
-      {
-        name: 'CSS',
-        description: 'Estilização de páginas web',
-        image: '/tech/css.png',
-      },
-      {
-        name: 'JavaScript',
-        description: 'O "cérebro" da web.',
-        image: '/tech/javascript.png',
-      },
-    ],
-    features: ['Fundamentos da Web', 'Lógica de Programação', 'Estruturas de Dados'],
-  },
-  {
-    title: 'Humano',
-    description:
-      'Nem só de bytes vive um programador, então vamos falar de rotina de estudos, livros sugeridos, soft skills e etc.',
-    icon: Users,
-    link: '/areas/humano-dev',
-    technologies: [
-      {
-        name: 'Design Thinking',
-        description: 'Creative problem-solving approach.',
-        image: '/tech/design-thinking.png',
-      },
-      {
-        name: 'Agile',
-        description: 'Efficient project management.',
-        image: '/tech/agile.png',
-      },
-      {
-        name: 'Communication',
-        description: 'Effective interpersonal skills.',
-        image: '/tech/communication.png',
-      },
-    ],
-    features: ['Soft Skills', 'Career Development', 'Team Collaboration'],
-  },
-  {
-    title: 'Express',
-    description:
-      'Formação para quem quer aprender a desenvolver aplicações web de forma rápida e completa.',
+    title: 'Formação Express',
+    description: `
+A Formação Express é um caminho otimizado para o desenvolvimentos de aplicações Full Stack. 
+Nós fizemos uma curadoria só com o essencial para que o aluno consiga sair do zero até desenvolver 
+aplicações completas, sem distrações, apenas com o que é mais importante, e direto ao ponto.
+    `,
     icon: FastForward,
     link: '/express',
     technologies: [
@@ -183,13 +219,82 @@ export const products = [
       },
     ],
     features: ['Formação completa para desenvolvedores', 'Do Zero ao Mercado em um curso rápido e prático', 'Mentorias e suporte especializado'],
-  },
+  }
 ];
+
+const allProducts = [
+  ...rootCategories[0].items,
+  rootCategories[1],
+  rootCategories[2]
+];
+
+const getDescriptionPoints = (description: string) => {
+  const fullText = description.replace(/\n/g, ' ').trim();
+  const sentences = fullText.split(/(?<=[.!?])\s+/);
+  return sentences.filter(sentence => sentence.length > 0);
+};
+
+function escapeRegExp(text: string) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+const keywords = [
+  { keyword: "mentorias ao vivo", tag: "strong" },
+  { keyword: "temas relevantes", tag: "em" },
+  { keyword: "fundamental", tag: "strong" },
+  { keyword: "estratégico", tag: "em" },
+  { keyword: "didática", tag: "em" },
+  { keyword: "sistemas robustos", tag: "strong" },
+  { keyword: "aplicações completas", tag: "strong" },
+  { keyword: "desafios reais", tag: "em" },
+  { keyword: "inovadoras", tag: "strong" },
+  { keyword: "base sólida", tag: "strong" },
+  { keyword: "ponto de entrada", tag: "em" },
+  { keyword: "confiança", tag: "em" },
+  { keyword: "competências", tag: "strong" },
+  { keyword: "clube do livro", tag: "strong" },
+  { keyword: "inteligência artificial", tag: "strong" },
+  { keyword: "automatizar tarefas", tag: "em" },
+  { keyword: "otimizar processos", tag: "em" },
+  { keyword: "pleno crescimento", tag: "strong" },
+  { keyword: "aplicações Full Stack", tag: "strong" },
+  { keyword: "essencial", tag: "em" },
+  { keyword: "direto ao ponto", tag: "em" },
+];
+
+function highlightKeywords(sentence: string): JSX.Element {
+  const regex = new RegExp(keywords.map(k => escapeRegExp(k.keyword)).join("|"), "gi");
+  const result: (string | JSX.Element)[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(sentence)) !== null) {
+    if (match.index > lastIndex) {
+      result.push(sentence.slice(lastIndex, match.index));
+    }
+    const matchedText = match[0];
+    const keywordObj = keywords.find(k => k.keyword.toLowerCase() === matchedText.toLowerCase());
+    if (keywordObj) {
+      if (keywordObj.tag === "strong") {
+        result.push(<strong key={lastIndex}>{matchedText}</strong>);
+      } else {
+        result.push(<em key={lastIndex}>{matchedText}</em>);
+      }
+    } else {
+      result.push(matchedText);
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < sentence.length) {
+    result.push(sentence.slice(lastIndex));
+  }
+  return <>{result}</>;
+}
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const activeProduct = products[activeTab];
+  const activeProduct = allProducts[activeTab];
   const ActiveIcon = activeProduct.icon;
 
   const handleTabChange = (index: number) => {
@@ -214,32 +319,57 @@ export default function Products() {
       <CardWithCursor>
         <div className="mt-12 min-h-[70vh] flex gap-0 bg-gradient-to-r dark:from-gray-900/30 from-gray-100/30 to-gray-300/30 dark:to-gray-900/30 opacity-100 rounded-3xl shadow-xl overflow-hidden">
           <nav className="w-64 bg-gradient-to-r dark:from-gray-900/30 from-gray-100/30 to-gray-300/30 dark:to-gray-900/30 opacity-100 border-r border-gray-700 p-4">
-            <div className="space-y-2">
-              {products.map((product, index) => {
-                const Icon = product.icon;
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-gray-400 px-4 py-2">
+                  <Laptop className="w-4 h-4" />
+                  <span className="font-medium text-md">Formação DEV</span>
+                </div>
+                <div className="space-y-1">
+                  {rootCategories[0].items.map((item, index) => {
+                    const Icon = item.icon;
+                    const isActive = activeTab === index;
+                    return (
+                      <button
+                        key={item.title}
+                        onClick={() => handleTabChange(index)}
+                        className={`w-full flex items-center gap-3 px-6 py-2 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-gray-700 text-white'
+                            : 'text-gray-400 hover:bg-gray-700/50 hover:text-gray-200'
+                        }`}
+                      >
+                        <Icon className="w-5 h-5" />
+                        <span className="font-medium">{item.title}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {[rootCategories[1], rootCategories[2]].map((item, index) => {
+                const Icon = item.icon;
+                const globalIndex = rootCategories[0].items.length + index;
+                const isActive = activeTab === globalIndex;
                 return (
                   <button
-                    key={product.title}
-                    onClick={() => handleTabChange(index)}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                      index === activeTab
+                    key={item.title}
+                    onClick={() => handleTabChange(globalIndex)}
+                    className={`w-full flex items-center gap-3 px-4 py-2 rounded-lg transition-colors ${
+                      isActive
                         ? 'bg-gray-700 text-white'
                         : 'text-gray-400 hover:bg-gray-700/50 hover:text-gray-200'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
-                    <span className="font-medium">{product.title}</span>
+                    <span className="font-medium">{item.title}</span>
                   </button>
                 );
               })}
             </div>
           </nav>
 
-          <div
-            className={`flex-1 flex flex-col transition-opacity duration-200 ${
-              isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-          >
+          <div className={`flex-1 flex flex-col transition-opacity duration-200 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
             <div className="bg-gray-900/70 border-b border-gray-700 flex items-center justify-between h-10 px-4">
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -275,7 +405,11 @@ export default function Products() {
                       <span className="font-medium">descricao = </span>
                     </div>
                     <div className="pl-4 text-gray-300 text-lg">
-                      {activeProduct.description}
+                      <ul className="list-disc ml-6 space-y-4">
+                        {getDescriptionPoints(activeProduct.description).map((sentence, i) => (
+                          <li key={i} className="mb-1">{highlightKeywords(sentence)}</li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
 

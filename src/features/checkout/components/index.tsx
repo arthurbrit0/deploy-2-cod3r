@@ -29,6 +29,7 @@ interface CheckoutPageProps {
     price: string;
     duration: string;
     total: string;
+    economy: string;
   };
 }
 
@@ -94,16 +95,25 @@ function CheckoutPage({ summary, selectedPlan }: CheckoutPageProps) {
                 />
                 <div>
                   <h2 className="text-3xl font-bold">Formação DEV</h2>
-                  <span className="text-lg text-gray-300">{selectedPlan.duration}</span>
+                  {selectedPlan.price !== "Selecione seu plano" &&
+                    <span className="text-lg text-gray-300">{selectedPlan.duration}</span>
+                  }
                 </div>
               </div>
               <div className="flex items-baseline gap-3 mb-6">
-                <span className="text-2xl text-gray-300">12x de R$</span>
-                <span className="text-7xl font-bold tracking-tight">{selectedPlan.price}</span>
+                {selectedPlan.price !== "Selecione seu plano" &&
+                  <span className="text-2xl text-gray-300">12x de R$</span>
+                }
+                <span className="text-5xl font-bold tracking-tight">{selectedPlan.price}</span>
               </div>
-              <div className="text-gray-300 text-xl font-semibold mb-12">
-                Ou {selectedPlan.total} à vista
-              </div>
+              {selectedPlan.price !== "Selecione seu plano" && (
+                <div className="text-gray-300 text-xl font-semibold mb-12 flex flex-col">
+                  Ou {selectedPlan.total} à vista 
+                  <span className="mt-1 ml-2 text-md text-emerald-300 font-bold bg-emerald-400/50 px-3 py-1 rounded-xl">
+                    {selectedPlan.economy}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
