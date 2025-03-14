@@ -3,7 +3,7 @@ import Container from '@/features/shared/layouts/Container'
 import Section from '../../shared/layouts/SectionWrapper'
 import Hero from '@/features/shared/components/hero'
 import Video from '@/features/shared/components/video'
-import Banner from '@/features/landing/components/banner'
+// import Banner from '@/features/landing/components/banner'
 import { FeaturesSection } from '@/features/landing/components/features/FeaturesSection'
 import { TestimonialsSection } from '@/features/shared/components/testimonies/infinite-scroll/TestimonialsSection'
 import { CommunitySection } from '@/features/landing/components/community/CommunitySection'
@@ -29,7 +29,7 @@ export default function ExpressLandingPage({ courses, video, heroSlogan }: Expre
           url={video}
           className="md:bg-[url('/background.svg')] bg-fill bg-center"
         />
-        <Banner qtyCourses={courses.length} />
+        {/* <Banner qtyCourses={courses.length} /> */}
       </Section>
       <Container>
         <Subject />
