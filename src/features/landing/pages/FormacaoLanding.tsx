@@ -43,9 +43,6 @@ export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandi
       <Section backgroundUrl='/bg.svg' style={{ backgroundPosition: 'top' }}>
         <TrackAudience />
       </Section>
-      <Section backgroundUrl='/bg-quantificador.svg' style={{ backgroundPosition: 'top' }}>
-        <Structure />
-      </Section>
       <Section backgroundUrl="/bg-roxo-verde.svg" style={{ backgroundPosition: 'top' }}>
         <Container>
           <EadSection />
@@ -59,6 +56,9 @@ export default function FormacaoLandingPage({ video, heroSlogan }: FormacaoLandi
         <VideoTestimonies />
       </Container>
       <TestimonialsSection />
+      <Section backgroundUrl='/bg-quantificador.svg' style={{ backgroundPosition: 'top' }}>
+        <Structure />
+      </Section>
       <Section backgroundUrl='/bg-quantificador.svg'>
         <Container>
           <CommunitySection />

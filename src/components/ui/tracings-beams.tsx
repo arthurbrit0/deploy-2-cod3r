@@ -1,12 +1,7 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useSpring,
-} from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { twm } from "@/utils/tw";
 
 export const TracingBeam = ({
@@ -16,42 +11,45 @@ export const TracingBeam = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: containerRef,
     offset: ["start start", "end start"],
   });
-
-  const contentRef = useRef<HTMLDivElement>(null);
   const [svgHeight, setSvgHeight] = useState(0);
 
+  // Atualiza svgHeight sempre que o tamanho do conteúdo mudar.
   useEffect(() => {
+    const observer = new ResizeObserver((entries) => {
+      if (entries.length > 0) {
+        const entry = entries[0];
+        setSvgHeight(entry.contentRect.height);
+      }
+    });
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight); 
+      observer.observe(contentRef.current);
     }
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.4], [0, svgHeight]), 
-    {
-      stiffness: 400,
-      damping: 90,
-    }
+    useTransform(scrollYProgress, [0, 0.4], [0, svgHeight]),
+    { stiffness: 400, damping: 90 }
   );
   const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, svgHeight - 50]), 
-    {
-      stiffness: 500,
-      damping: 90,
-    }
+    useTransform(scrollYProgress, [0, 1], [0, svgHeight - 50]),
+    { stiffness: 500, damping: 90 }
   );
 
   return (
     <motion.div
-      ref={ref}
+      ref={containerRef}
       className={twm("relative w-full max-w-3xl mx-auto h-full", className)}
     >
-      <div className="absolute -left-4 md:-left-6 top-0"> 
+      <div className="absolute -left-4 md:-left-6 top-0">
         <motion.div
           transition={{
             duration: 0.2,
@@ -94,7 +92,7 @@ export const TracingBeam = ({
             transition={{
               duration: 10,
             }}
-          ></motion.path>
+          />
           <motion.path
             d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
             fill="none"
@@ -104,7 +102,7 @@ export const TracingBeam = ({
             transition={{
               duration: 10,
             }}
-          ></motion.path>
+          />
           <defs>
             <motion.linearGradient
               id="gradient"
@@ -114,10 +112,10 @@ export const TracingBeam = ({
               y1={y1}
               y2={y2}
             >
-              <stop stopColor="#18CCFC" stopOpacity="0"></stop>
-              <stop stopColor="#18CCFC"></stop>
-              <stop offset="0.325" stopColor="#6344F5"></stop>
-              <stop offset="1" stopColor="#AE48FF" stopOpacity="0"></stop>
+              <stop stopColor="#18CCFC" stopOpacity="0" />
+              <stop stopColor="#18CCFC" />
+              <stop offset="0.325" stopColor="#6344F5" />
+              <stop offset="1" stopColor="#AE48FF" stopOpacity="0" />
             </motion.linearGradient>
           </defs>
         </svg>
