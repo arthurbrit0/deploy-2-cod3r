@@ -14,7 +14,8 @@ export default function AssinaturaPage() {
   const [selectedPlan, setSelectedPlan] = useState({
     price: "Selecione seu plano",
     duration: "1 ANO DE ACESSO",
-    total: "R$ 1.197"
+    total: "R$ 1.197",
+    economy: "0%"
   });
 
   const [summary, setSummary] = useState<Summary>(initialSummary);
