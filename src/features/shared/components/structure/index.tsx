@@ -11,13 +11,15 @@ function CourseAccordionItem({ number, title, duration, descricao, aulas }: {
 }) {
   return (
     <AccordionItem value={`course-${number}`}>
-      <AccordionTrigger className="rounded-lg bg-zinc-900 px-3 py-2 hover:bg-secondary/80">
-        <div className="flex items-center gap-3">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-sm font-medium text-primary">
-            {number}
-          </span>
-          <span className="text-sm font-medium">{title}</span>
-          <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
+      <AccordionTrigger className="rounded-lg bg-zinc-900 px-3 py-2 hover:bg-secondary/80 hover:no-underline">
+        <div className="flex items-center justify-between w-full">
+          <div className="flex items-center gap-3">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-sm font-medium text-primary">
+              {number}
+            </span>
+            <span className="text-sm font-medium">{title}</span>
+          </div>
+          <div className="flex items-center gap-2 mr-2 text-xs md:text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
               <BookOpen className="h-4 w-4" />
               <span>{aulas} aulas</span>
@@ -64,7 +66,7 @@ function Section({ title, icon: Icon, descricao, tracks }: {
           const totalAulas = track.items.reduce((acc, curso) => acc + curso.aulas, 0);
           return (
             <AccordionItem key={track.title} value={track.title} className="border-b-0">
-              <AccordionTrigger className="rounded-lg bg-accent/50 px-4 py-3 hover:bg-accent [&[data-state=open]]:bg-accent">
+              <AccordionTrigger className="rounded-lg bg-accent/50 px-4 py-3 hover:bg-accent hover:no-underline">
                 <div className="flex flex-col items-start gap-1">
                   <h3 className="font-medium text-lg">{`Trilha ${track.title}`}</h3>
                   <p className="text-sm text-muted-foreground">{track.descricao}</p>
