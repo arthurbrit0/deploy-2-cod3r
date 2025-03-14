@@ -34,6 +34,17 @@ interface CheckoutPageProps {
 }
 
 function CheckoutPage({ summary, selectedPlan }: CheckoutPageProps) {
+  const handleEmptyPlan = () => {
+    const plansElement = document.getElementById('plans');
+    if (plansElement) {
+      setTimeout(() => {
+        window.scrollTo({ 
+          top: plansElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  };
   const formattedHours = Math.ceil(summary.totalHours / 3600);
 
   const features = useMemo(() => [
@@ -96,15 +107,18 @@ function CheckoutPage({ summary, selectedPlan }: CheckoutPageProps) {
                 <div>
                   <h2 className="text-3xl font-bold">Formação DEV</h2>
                   {selectedPlan.price !== "Selecione seu plano" &&
-                    <span className="text-lg text-gray-300">{selectedPlan.duration}</span>
+                    <span className="text-lg text-gray-300">{selectedPlan.duration} </span>
                   }
                 </div>
               </div>
               <div className="flex items-baseline gap-3 mb-6">
-                {selectedPlan.price !== "Selecione seu plano" &&
+                {selectedPlan.price !== "Selecione seu plano" ?
+                <>
                   <span className="text-2xl text-gray-300">12x de R$</span>
+                  <span className="text-5xl font-bold tracking-tight">{selectedPlan.price}</span>
+                </> : 
+                  <button onClick={handleEmptyPlan} className="px-3 py-2 rounded-xl text-5xl font-bold tracking-tight hover:bg-gray-800/40 transition-colors">{selectedPlan.price}</button>
                 }
-                <span className="text-5xl font-bold tracking-tight">{selectedPlan.price}</span>
               </div>
               {selectedPlan.price !== "Selecione seu plano" && (
                 <div className="text-gray-300 text-xl font-semibold mb-12 flex flex-col">

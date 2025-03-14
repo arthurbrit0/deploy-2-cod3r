@@ -42,7 +42,7 @@ export default function Banner() {
                 </div>
 
                 <div className="absolute bottom-0 flex justify-center w-full -mb-5">
-                    <Button primary href="/assinatura">
+                    <Button primary href="/assinatura" className="hover:bg-emerald-300 hover:scale-105 transition-all">
                         <IconCheck size={24} />
                         <span>Garantir Minha Vaga</span>
                     </Button>

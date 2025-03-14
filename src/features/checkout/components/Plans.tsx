@@ -74,7 +74,7 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
   };
 
   return (
-    <div>
+    <div id="plans">
       <BackgroundBeams className="h-auto md:h-[82vh]" />
       <div className="relative h-full mb-16 w-full overflow-hidden bg-none">
         <div className="mx-auto max-w-7xl px-6 py-24">
