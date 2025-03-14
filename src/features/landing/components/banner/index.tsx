@@ -27,7 +27,7 @@ export default function Banner() {
                             <span className="text-green-400 font-bold">63%</span>
                         </div>
                     </Item>
-                    <Item value={"3"} label="Formações Completas">
+                    <Item value={"3"} label="Formações">
                         <div className="flex gap-1.5 items-center">
                             <span>São</span>
                             <span className="text-green-400 font-bold">
