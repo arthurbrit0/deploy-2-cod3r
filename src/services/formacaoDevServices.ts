@@ -1,7 +1,7 @@
 import { FormacaoDevCourse, FormacaoDevProduct, FormacaoDevTrack } from "@/types/formacaoDev.types";
 import { fetchJSON } from "./shared/fetchJSON";
 
-const productIds = [
+export const productIds = [
     "humano-dev",
     "especialista-dev",
     "fundamentos-dev",
