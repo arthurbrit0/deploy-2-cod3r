@@ -34,7 +34,7 @@ export default function StatsSection() {
         },
         {
           title: 'Projetos em equipe',
-          description: 'Tenha a possibilidade de desenvolver projetos em grupo aprendendo e ensinando',
+          description: 'Aprenda e se desenvolva trabalhando grandes projetos em grupo',
           icon: Users,
         },
         {
@@ -60,14 +60,14 @@ export default function StatsSection() {
         <Title
             main={[
               {
-                value: 'Você reberá recursos exclusivos', 
+                value: 'Receba recursos exclusivos da', 
               },
               {
-                value: 'da Formação DEV',
+                value: 'Formação Dev',
                 gradient: true
               },
             ]}
-            secondary="Tenha acesso a recursos exclusivos para acelerar seu aprendizado"
+            secondary="Tudo foi pensado para acelerar o seu aprendizado."
             />
         </div>
         <FeatureCard features={defaultFeatures}/>

@@ -12,11 +12,12 @@ interface PricingPlan {
   currentPrice?: string;
   savings?: string;
   buttonText: string;
+  economy: string;
 }
 
 interface PricingCardsProps {
-  onPlanSelect: (plan: { price: string; duration: string; total: string }) => void;
-  selectedPlan: { price: string; duration: string; total: string };
+  onPlanSelect: (plan: { price: string; duration: string; total: string; economy: string; }) => void;
+  selectedPlan: { price: string; duration: string; total: string; economy: string; };
 }
 
 const pricingPlans: PricingPlan[] = [
@@ -27,7 +28,8 @@ const pricingPlans: PricingPlan[] = [
     originalPrice: "R$ 2.297",
     currentPrice: "R$ 1.197",
     savings: "ECONOMIA DE R$ 1.100",
-    buttonText: "PLANO SELECIONADO"
+    buttonText: "PLANO SELECIONADO",
+    economy: "Desconto de 47,89%"
   },
   {
     title: "2 ANOS DE ACESSO",
@@ -36,7 +38,8 @@ const pricingPlans: PricingPlan[] = [
     originalPrice: "R$ 4.594",
     currentPrice: "R$ 1.897",
     savings: "ECONOMIA DE R$ 2.697",
-    buttonText: "GARANTIR MINHA VAGA"
+    buttonText: "GARANTIR MINHA VAGA",
+    economy: "Desconto de 58,71%"
   },
   {
     title: "3 ANOS DE ACESSO",
@@ -45,7 +48,8 @@ const pricingPlans: PricingPlan[] = [
     originalPrice: "R$ 6.891",
     currentPrice: "R$ 2.499",
     savings: "ECONOMIA DE R$ 4.392",
-    buttonText: "GARANTIR MINHA VAGA"
+    buttonText: "GARANTIR MINHA VAGA",
+    economy: "Desconto de 63,74%"
   }
 ];
 
@@ -54,7 +58,8 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
     onPlanSelect({
       price: plan.price,
       duration: plan.duration,
-      total: plan.currentPrice || ""
+      total: plan.currentPrice || "",
+      economy: plan.economy
     });
     
     const checkoutElement = document.getElementById('checkout');
@@ -104,7 +109,6 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
                         <span className="text-2xl font-medium text-white">12x de R$</span>
                         <span className="text-6xl font-bold text-white">{plan.price}</span>
                       </div>
-                      <p className="mt-1 text-sm text-purple-200">{plan.duration}</p>
                       {plan.originalPrice && (
                         <div className="mt-2">
                           <p className="text-sm text-gray-400">
@@ -115,14 +119,21 @@ export const PricingCards: React.FC<PricingCardsProps> = ({ onPlanSelect, select
                               {plan.savings}
                             </p>
                           )}
+                          {plan.economy && (
+                            <div className="mt-1">
+                              <span className="text-sm text-emerald-400 font-bold bg-emerald-400/40 px-3 py-1 rounded-xl">
+                                {plan.economy}
+                              </span>
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
                     <Button 
                       className={`w-full ${
                         isSelected 
-                          ? 'bg-purple-600 hover:bg-purple-700' 
-                          : 'bg-gray-700 hover:bg-gray-600'
+                          ? 'bg-gray-700 hover:bg-gray-600'
+                          : 'bg-purple-600 hover:bg-purple-700' 
                       } text-white mt-6`}
                       onClick={() => handlePlanSelect(plan)}
                     >

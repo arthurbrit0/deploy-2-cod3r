@@ -16,6 +16,7 @@ interface SelectedPlan {
   price: string;
   duration: string;
   total: string;
+  economy: string;
 }
 
 interface CheckoutSectionProps {

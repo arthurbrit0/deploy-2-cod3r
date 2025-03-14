@@ -164,7 +164,7 @@ export const SkeletonOne = () => {
   return (
     <div className="relative h-[620px] w-full max-w-5xl mx-auto bg-none rounded-lg shadow-lg overflow-hidden flex">
       <div className="flex-1 flex flex-col space-y-0 p-0 relative">
-        <h2 className="text-2xl font-bold mb-4">Tire suas dúvidas com a comunidade!</h2>
+        <h2 className="text-2xl font-bold mb-4">Tire dúvidas, faça amizade e network com Devs do mundo inteiro</h2>
         <div className="flex items-center justify-between p-4 border-b dark:border-gray-800 bg-gray-500 dark:bg-gray-800">
           <div className="flex items-center space-x-3">
             <div className="relative">

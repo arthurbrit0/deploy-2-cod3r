@@ -2,12 +2,11 @@ import { IconCheck } from '@tabler/icons-react'
 import Button from '../../../shared/components/Button'
 import Container from '../../../shared/layouts/Container'
 import { BackgroundBeams } from '@/components/ui/background-beams'
-
 export interface BannerProps {
     qtyCourses: number
 }
 
-export default function Banner(props: BannerProps) {
+export default function Banner() {
     return (
         <div
             className="
@@ -22,31 +21,23 @@ export default function Banner(props: BannerProps) {
                     </div>
                 </div>
                 <div className="flex flex-col items-center lg:grid lg:grid-cols-3 gap-8 pb-5">
-                    <Item value="50%" label="de desconto">
-                        <div className="flex gap-1.5 items-center text-zinc-400">
-                            <span className="text-xs">De</span>
-                            <span className="line-through">R$ 597,00</span>
-                        </div>
+                    <Item value="63%" label="de desconto">
                         <div className="flex gap-1.5 items-center">
-                            <span className="text-xs">Por</span>
-                            <span className="text-green-400 font-bold">R$ 297,00</span>
+                            <span className="text-lg">Descontos de até</span>
+                            <span className="text-green-400 font-bold">63%</span>
                         </div>
                     </Item>
-                    <Item value={props.qtyCourses.toString()} label="Cursos Atualizados">
+                    <Item value={"3"} label="Formações Completas">
                         <div className="flex gap-1.5 items-center">
                             <span>São</span>
                             <span className="text-green-400 font-bold">
-                                {props.qtyCourses} cursos
+                                3 Formações
                             </span>
                         </div>
                         <span>pelo preço de 1</span>
                     </Item>
-                    <Item value="02" label="Anos de Acesso">
-                        <span>O dobro de acesso</span>
-                        <div className="flex gap-1.5 items-center">
-                            <span>pela</span>
-                            <span className="text-green-400 font-bold">metade do preço</span>
-                        </div>
+                    <Item value="Mentorias" label="exclusivas ao vivo">
+                        <span className="text-center">Participe de mentorias exclusivas ao vivo <span className="text-green-400 font-bold">em grupo</span></span>
                     </Item>
                 </div>
 
@@ -79,10 +70,10 @@ function Item(props: { value: string; label: string; children: any }) {
                 >
                     {props.value}
                 </span>
-                <span className="text-sm text-zinc-300">{props.label}</span>
+                <span className="text-sm text-zinc-300 uppercase">{props.label}</span>
             </div>
-            <div className="bg-black w-full p-3 text-lg">
-                <div className="flex flex-col justify-center items-center text-zinc-300 upprcase font-semibold leading-5">
+            <div className="bg-black w-full p-3 text-lg min-h-[7vh]">
+                <div className="flex flex-col justify-center items-center text-zinc-300 font-semibold leading-5">
                     {props.children}
                 </div>
             </div>
