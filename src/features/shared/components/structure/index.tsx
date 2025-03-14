@@ -75,7 +75,7 @@ function Section({ title, icon: Icon, descricao, tracks }: {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="h-5 w-5" />
-                      <span>{track.duration} horas</span>
+                      <span>{track.duration}h</span>
                     </div>
                   </div>
                 </div>
